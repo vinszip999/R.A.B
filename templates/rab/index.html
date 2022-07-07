@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}R.A.B{% endblock %}
+
+{% block content %}
+    <div class="con">
+<!--        <video muted autoplay loop>-->
+<!--            <source src="{% static 'img/main' %}" type="video/mp4"/>-->
+<!--        </video>-->
+        <img src="/static/img/main.jpg" alt="배경">
+        <div class="background_box"></div>
+
+        <div class="textcon">
+            <h1>R.A.B</h1>
+            <h4>Reptiles and Birds</h4>
+            <h4>전세계의 다양한 파충류와 조류들의 정보를 공유해요</h4>
+            {% if user.is_authenticated %}
+                <a href="{% url 'rab:board_reptiles' %}"><button class="sta-btn">시작하기</button></a>
+            {% else %}
+                <a href="{% url 'rab:login' %}"><button class="sta-btn">시작하기</button></a>
+            {% endif %}
+        </div>
+
+    </div>
+{% endblock %}
