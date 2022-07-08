@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}상세보기{% endblock %}
+{% block title %}R.A.B{% endblock %}
 {% block extrahead %}
     <link rel="stylesheet" href="{% static 'css/board_detail.css' %}">
     <link
@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+<!--    <br><br><br>-->
     {% if messages %}
         <div class="alert alert-danger my-3" role="alert">
             {% for message in messages %}
@@ -39,7 +40,7 @@
                     <h3>{{ board.comment_set.all.count }}</h3>
                 </div>
                 <div class="applications">
-                    <span>신청수</span>
+                    <span>좋아요</span>
                     <h3>{{ board.application_set.all.count }}</h3>
                 </div>
             </div>
@@ -51,12 +52,12 @@
                     {% if board.profile.user != request.user %}
                         {% if application_list.count == 0 %}
                             <a href="{% url 'rab:application_create' board.id %}">
-                                <button>신청하기</button>
+                                <button>좋아요</button>
                             </a>
                         {% else %}
                             {% for application in application_list.all %}
                                 <a href="{% url 'rab:application_delete' application.id %}">
-                                    <button>신청취소</button>
+                                    <button>좋아요 취소</button>
                                 </a>
                             {% endfor %}
                         {% endif %}
@@ -74,10 +75,10 @@
                 </div>
             </div>
             <div class="contents">
-                <div class="end_date">
-                    <h3>봉사일</h3>
-                    <h5>{{ board.end_date }}</h5>
-                </div>
+<!--                <div class="end_date">-->
+<!--                    <h3>봉사일</h3>-->
+<!--                    <h5>{{ board.end_date }}</h5>-->
+<!--                </div>-->
                 <h4>{{ board.content }}</h4>
                 {% if board.image %}
                     <img src="{{ board.image.url }}" class="board-img" alt="">

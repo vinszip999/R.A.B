@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}파충류{% endblock %}
+{% block title %}R.A.B{% endblock %}
 {% block extrahead %}
     <link rel="stylesheet" href="{% static 'css/board_list.css' %}">
     <link
@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+    <br><br><br>
     <a href="{% url 'rab:board_create' %}" class="btn-lg btn-create"><i class="fas fa-plus"></i>&nbsp;&nbsp;글 등록</a>
     {% if board_list %}
         <div class="board-con">
@@ -20,7 +21,7 @@
                         {% if board.image %}
                             <img src="{{ board.image.url }}" class="board-img" alt="">
                         {% else %}
-                            <img src="{% static 'img/defaultImg.png' %}" class="board-img" alt="">
+                            <img src="{% static 'img/main.jpg' %}" class="board-img" alt="">
                         {% endif %}
                         <div class="board-info">
                             <span class="board-title">{{ board.title }}</span>

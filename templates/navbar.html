@@ -2,23 +2,26 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 <!-- 네비게이션바 -->
 <nav class="nav">
-    <a class="navbar-brand" href="{% url 'rab:index' %}"> <img src="{% static 'img/logo2.png' %}" alt=""/> </a>
+<!--    <a class="navbar-brand" href="{% url 'rab:index' %}"> <img src="{% static 'img/logo2.png' %}" alt=""/> </a>-->
+    <a class="navbar-brand" href="{% url 'rab:index' %}"> R.A.B </a>
     {% if user.is_authenticated %}
+<!--        <a class="navbar-brand" href="{% url 'rab:index' %}"> R.A.B </a>-->
         <ul class="menu navbar">
 <!--            <li class="nav-item">-->
 <!--                <a href="{% url 'rab:intro' %}">R.A.B</a>-->
 <!--            </li>-->
             <li class="nav-item">
-                <a href="{% url 'rab:board_reptiles' %}">파충류</a>   <!-- 봉사 신청 -->
+                <a href="{% url 'rab:board' %}">Reptiles & Birds</a>   <!-- 봉사 신청 -->
             </li>
+<!--            <li class="nav-item">-->
+<!--                <a href="{% url 'rab:board' %}">조류</a>   &lt;!&ndash; 봉사 신청 &ndash;&gt;-->
+<!--            </li>-->
             <li class="nav-item">
-                <a href="{% url 'rab:board_birds' %}">조류</a>   <!-- 봉사 신청 -->
+                <a href="{% url 'rab:board_create' %}">Write</a>   <!-- 봉사 신청 -->
             </li>
+
             <li class="nav-item">
-                <a href="{% url 'rab:want_board_reptiles' %}">글 목록(파충류)</a>   <!-- 내가 쓴 글에 봉사 신청한 사람 목록 -->
-            </li>
-            <li class="nav-item">
-                <a href="{% url 'rab:want_board_birds' %}">글 목록(조류)</a>   <!-- 내가 쓴 글에 봉사 신청한 사람 목록 -->
+                <a href="{% url 'rab:want_board' %}">List</a>   <!-- 내가 쓴 글에 봉사 신청한 사람 목록 -->
             </li>
         </ul>
         <ul class="user navbar">
@@ -30,22 +33,23 @@
             </li>
         </ul>
     {% else %}
+<!--        <a class="navbar-brand" href="{% url 'common:login' %}"> R.A.B </a>-->
         <ul class="menu navbar">
 <!--            <li class="nav-item">-->
 <!--                <a href="{% url 'common:login' %}">R.A.B</a>-->
 <!--            </li>-->
             <li class="nav-item">
-                <a href="{% url 'common:login' %}">파충류</a>   <!-- 봉사 신청 -->
+                <a href="{% url 'common:login' %}">파충류&조류</a>   <!-- 봉사 신청 -->
             </li>
+<!--            <li class="nav-item">-->
+<!--                <a href="{% url 'common:login' %}">조류</a>   &lt;!&ndash; 봉사 신청 &ndash;&gt;-->
+<!--            </li>-->
             <li class="nav-item">
-                <a href="{% url 'common:login' %}">조류</a>   <!-- 봉사 신청 -->
+                <a href="{% url 'common:login' %}">글 목록</a>   <!-- 내가 쓴 글에 봉사 신청한 사람 목록 -->
             </li>
-            <li class="nav-item">
-                <a href="{% url 'common:login' %}">글 목록(파충류)</a>   <!-- 내가 쓴 글에 봉사 신청한 사람 목록 -->
-            </li>
-            <li class="nav-item">
-                <a href="{% url 'common:login' %}">글 목록(조류)</a>   <!-- 내가 쓴 글에 봉사 신청한 사람 목록 -->
-            </li>
+<!--            <li class="nav-item">-->
+<!--                <a href="{% url 'common:login' %}">글 목록(조류)</a>   &lt;!&ndash; 내가 쓴 글에 봉사 신청한 사람 목록 &ndash;&gt;-->
+<!--            </li>-->
         </ul>
         <ul class="user navbar">
             <li class="nav-item">

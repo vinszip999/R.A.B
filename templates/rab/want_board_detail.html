@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}함께한 사람들{% endblock %}
+{% block title %}R.A.B{% endblock %}
 {% block extrahead %}
     <link rel="stylesheet" href="{% static 'css/want_board.css' %}">
     <link
@@ -11,16 +11,17 @@
 {% endblock %}
 
 {% block content %}
-    <h2 style="text-align: center; font-weight: bold; margin-bottom: 50px;">봉사 신청자</h2>
+    <br><br><br>
+    <h2 style="text-align: center; font-weight: bold; margin-bottom: 50px;">좋아요</h2>
     {% if application_list %}
         <div class="list-con">
         <div class="tabcon">
             <table class="table">
                 <thead class="thead">
                 <tr>
-                    <th>아이디</th>
-                    <th>닉네임</th>
-                    <th>이메일</th>
+                    <th>ID</th>
+<!--                    <th>닉네임</th>-->
+<!--                    <th>이메일</th>-->
                 </tr>
                 </thead>
                 <tbody>
@@ -28,9 +29,8 @@
                 {% for application in application_list %}
                     <tr>
                         <td>{{ application.profile.user }}</td>
-                        <td>{{ application.profile.nickname }}</td>
-                        <td>{{ application.profile.user.email }}
-                        </td>
+<!--                        <td>{{ application.profile.nickname }}</td>-->
+<!--                        <td>{{ application.profile.user.email }}</td>-->
                     </tr>
                 {% endfor %}
                 </tbody>
@@ -78,7 +78,7 @@
             {% endif %}
         </ul>
     {% else %}
-        <h3 style="font-weight: bold; margin-top: 180px; text-align: center">아직 봉사자가 없습니다. 조금만 더 기다려주세요 ! 😋</h3>
+        <h3 style="font-weight: bold; margin-top: 180px; text-align: center">좋아요를 누른 사람이 없습니다.</h3>
     {% endif %}
 </div>
 

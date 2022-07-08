@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}함께할래요{% endblock %}
+{% block title %}R.A.B{% endblock %}
 
 {% load static %}
 {% block extrahead %}
@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+    <br><br><br>
     <h2 style="text-align: center; font-weight: bold">내가 작성한 글</h2>
 
     {% if board_list %}
@@ -21,7 +22,7 @@
                         {% if board.image %}
                             <img src="{{ board.image.url }}" class="board-img" alt="">
                         {% else %}
-                            <img src="{% static 'img/defaultImg.png' %}" class="board-img" alt="">
+                            <img src="{% static 'img/main.jpg' %}" class="board-img" alt="">
                         {% endif %}
                         <div class="board-info">
                             <span class="board-title">{{ board.title }}</span>
@@ -84,8 +85,8 @@
         </ul>
     {% else %}
         <div class="concon">
-            <h3 style="font-weight: bold; margin-top: 30px;">아직 작성한 글이 없습니다. 서둘러 글을 작성해보세요 ! 😎</h3>
-            <a href="{% url 'rab:board_create' %}" class="btn-lg btn-wcreate"><i class="fas fa-plus"></i>&nbsp;&nbsp;글 등록 하기</a>
+<!--            <h3 style="font-weight: bold; margin-top: 30px;">아직 작성한 글이 없습니다. 서둘러 글을 작성해보세요 ! 😎</h3>-->
+            <a href="{% url 'rab:board_create' %}" class="btn-lg btn-wcreate"><i class="fas fa-plus"></i>&nbsp;&nbsp;글 작성하기</a>
         </div>
 
     {% endif %}

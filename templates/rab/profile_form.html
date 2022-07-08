@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block content %}
+    <br><br><br>
     <div class="container">
         <h1 class="text-center">회원정보 변경</h1>
         <form method="post" enctype="multipart/form-data">
@@ -60,7 +61,7 @@
             </div>
             <div class="form-group">
                 <label for="id_description">한줄 소개</label>
-                <textarea name="description" cols="40" rows="10" class="form-control"
+                <textarea name="description" cols="40" rows="10" class="form-control" minlength="0" maxlength="30"
                           placeholder="자신을 표현할 수 있는 한 줄 소개를 적어주세요!" id="id_description">{{ profile_form.description.value}}</textarea>
             </div>
             <div class="form-group">

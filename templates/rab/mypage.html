@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}마이페이지{% endblock %}
+{% block title %}R.A.B{% endblock %}
 
 {% block extrahead %}
     <link rel="stylesheet" href="{% static 'css/board_list.css' %}">
@@ -12,6 +12,7 @@
 {% endblock %}
 
 {% block content %}
+    <br><br><br>
     <div class="mypage-con">
         <div class="user-profile">
             <!-- 유저 프로필 -->
@@ -109,10 +110,10 @@
 <!--                    {% endif %}-->
 <!--                </ul>-->
 <!--            {% else %}-->
-<!--&lt;!&ndash;                <div class="concon">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <h3 style="font-weight: bold; margin-top: 30px;">아직 신청한 봉사가 없습니다. 서둘러 봉사에 참여해보세요 ! ✨</h3>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <a href="{% url 'rab:board' %}" class="btn-lg btn-wcreate"><i class="fas fa-plus"></i>&nbsp;&nbsp;봉사 참여하기</a>&ndash;&gt;-->
-<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--                <div class="concon">-->
+<!--                    <h3 style="font-weight: bold; margin-top: 30px;">아직 신청한 봉사가 없습니다. 서둘러 봉사에 참여해보세요 ! ✨</h3>-->
+<!--                    <a href="{% url 'rab:board' %}" class="btn-lg btn-wcreate"><i class="fas fa-plus"></i>&nbsp;&nbsp;봉사 참여하기</a>-->
+<!--                </div>-->
 <!--            {% endif %}-->
 <!--        </div>-->
 
